@@ -4,7 +4,7 @@ export const Container = styled.div`
   display:flex;
   max-width:224px;
   height:48px;
-  background:${({ status }) => (status === 'PAID' ? '#2a5cbc' : '#00ffc8')};
+  background:${({ status }) => (status === 'WAITING' ? '#2a5cbc' : '#00ffc8')};
   border-radius:3px;
   padding:5px;
 

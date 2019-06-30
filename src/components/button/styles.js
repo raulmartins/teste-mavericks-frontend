@@ -4,16 +4,16 @@ export const Button = styled.button`
   display:flex;
   justify-content: center;
   padding:0px 5px;
-  width:250px;
-  min-width:auto;
-  height:40px;
+  width:288px;
+  height:36px;
   border:solid 1px #999;
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
-  color:#264661;
+  color: rgb(0, 40, 70);
   background:transparent;
   outline:none;
   font-family:sans-serif;
-  font-size:18px;
   border-radius:3px;
   text-align:center;
 
