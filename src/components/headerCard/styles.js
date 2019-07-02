@@ -4,7 +4,7 @@ export const Container = styled.div`
   display:flex;
   justify-content:space-around;
   align-items:center;
-  width:100vw;
+  width:100%;
   max-width:700px;
   height:50px;
   background:#fff;
@@ -30,13 +30,18 @@ export const Content = styled.div`
   padding:5px;
 
   strong {
-    color:red;
+    color: rgb(218, 41, 28);
     font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 13px;
   }
 
   p {
-    color:#425F75;
-    font-weight:lighter;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 0.25px;
   }
 `
 export const WrapperIcon = styled.div`

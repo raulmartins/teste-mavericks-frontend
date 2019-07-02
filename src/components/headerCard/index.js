@@ -2,17 +2,17 @@ import React from 'react'
 import { FaWordpressSimple, FaClone } from 'react-icons/fa'
 import { Container, Content, WrapperIcon } from './styles'
 
-const headerCard = () => (
+const headerCard = ({ children, id }) => (
   <Container>
     <WrapperIcon>
       <FaWordpressSimple size={24} color="#495B69" />
     </WrapperIcon>
     <Content>
-      <strong>WIREDCARD ID</strong>
-      <p>ORD-987697676976</p>
+      <strong>{children}</strong>
+      <p>{id}</p>
     </Content>
 
-    <button onClick={() => { }}>
+    <button onClick={() => {}}>
       <span><FaClone size={24} color="#495B69" /></span>
     </button>
   </Container>

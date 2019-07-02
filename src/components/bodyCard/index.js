@@ -1,33 +1,34 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react'
 import { FaHome } from 'react-icons/fa'
-
 import { Container, Content } from './styles'
 
-const bodyCard = () => (
-  <Container>
-    <div>
+export default function bodyCard({ customer }) {
+  const address = customer.addresses[0]
+  return (
+    <Container>
       <div>
-        <i />
+        <div>
+          <i />
+        </div>
+        <Content>
+          <strong>NOME</strong>
+          <p>{customer.fullname}</p>
+        </Content>
       </div>
-      <Content>
-        <strong>NOME</strong>
-        <p>Nome do comprador</p>
-      </Content>
-    </div>
-    <div>
       <div>
-        <FaHome size={20} color="#425563" />
+        <div>
+          <FaHome size={20} color="#425563" />
+        </div>
+        <Content>
+          <strong>ENDEREÇO</strong>
+          <p>{address.street}, {address.streetNumber}</p>
+          <p>{address.district}</p>
+          <p>{address.state}</p>
+          <p>CEP - {address.zipCode}</p>
+        </Content>
       </div>
-      <Content>
-        <strong>ENDEREÇO</strong>
-        <p>Rua Joel Carlos Borges, 60</p>
-        <p>Brookly</p>
-        <p>São Paulo - SP</p>
-        <p>CEP - 04571170</p>
-      </Content>
-    </div>
 
-  </Container>
-)
-
-export default bodyCard
+    </Container>
+  )
+}
