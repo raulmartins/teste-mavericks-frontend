@@ -2,12 +2,15 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useState } from 'react'
 
-import { Container, Body, Footer } from './styles'
+import {
+  Container, Body, Footer, WrapperStatus, WrapperOrder,
+} from './styles'
 import Header from '../../components/header'
 import Title from '../../components/title'
 import BodyCard from '../../components/bodyCard'
 import HeaderCard from '../../components/headerCard'
 import CardDetail from '../../components/cardDetail'
+import StatusOrder from '../../components/statusOrder'
 import axios from '../../services/api'
 
 export default function orderDetail() {
@@ -33,8 +36,19 @@ export default function orderDetail() {
       <Title primary>Detalhes do pedido</Title>
       <Header value={data.amount.total} payments={data.payments} />
       <Body>
-        <HeaderCard id={data.id}>
-          WIRECARD ID
+        <WrapperStatus>
+          <HeaderCard primary id={data.id}>
+            PEDIDO
+          </HeaderCard>
+          <StatusOrder status="WAITING" />
+        </WrapperStatus>
+        <WrapperOrder>
+          <HeaderCard primary id={data.id}>
+            WIRECARD ID
+          </HeaderCard>
+        </WrapperOrder>
+        <HeaderCard>
+          DADOS DO COMPRADOR
         </HeaderCard>
         <BodyCard customer={data.customer} />
       </Body>

@@ -7,6 +7,7 @@ export const Container = styled.div`
   background:${({ status }) => (status === 'WAITING' ? '#2a5cbc' : '#00ffc8')};
   border-radius:3px;
   padding:5px;
+  margin-left: 40px;
 
 `
 export const Content = styled.div`

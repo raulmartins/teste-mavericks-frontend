@@ -30,10 +30,10 @@ export const Content = styled.div`
   padding:5px;
 
   strong {
-    color: rgb(218, 41, 28);
+    color: ${({ primary }) => (primary ? '#da291c' : '#002846')};
     font-size: 12px;
-    letter-spacing: 2px;
-    font-weight: 500;
+    letter-spacing:${({ primary }) => (primary ? '2px' : '0')};
+    font-weight: ${({ primary }) => (primary ? 'normal' : 'bold')};
     font-size: 13px;
   }
 

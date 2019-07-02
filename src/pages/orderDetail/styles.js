@@ -11,6 +11,15 @@ export const Container = styled.div`
 export const Body = styled.div`
 
 `
+export const WrapperStatus = styled.div`
+  display:flex;
+
+`
+export const WrapperOrder = styled.div`
+  margin: 20px 0;
+
+`
+
 
 export const Footer = styled.div`
   margin: 20px 0;
