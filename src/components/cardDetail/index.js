@@ -1,5 +1,6 @@
 import React from 'react'
 import { FormattedNumber } from 'react-intl'
+import PropTypes from 'prop-types'
 import Title from '../title'
 import {
   Container, Content, WrapperTotal, WrapperValue,
@@ -33,4 +34,10 @@ const cardDetail = ({ amount }) => (
     </Content>
   </Container>
 )
+
+cardDetail.propType = {
+  amount: PropTypes.shape({
+    total: PropTypes.string.isRequired,
+  }),
+}
 export default cardDetail

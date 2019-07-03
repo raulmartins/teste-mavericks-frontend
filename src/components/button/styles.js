@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Button = styled.button`
+export const ButtonMav = styled.button`
   display:flex;
   justify-content: center;
   padding:0px 5px;

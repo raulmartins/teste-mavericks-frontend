@@ -1,18 +1,16 @@
+/* eslint-disable react/require-default-props */
 import React from 'react'
 import moment from 'moment'
-
-
 import { FormattedNumber } from 'react-intl'
+import PropTypes from 'prop-types'
 import {
   Container, SubContainer, ContainerValue, ContainerData,
 } from './styles'
-import Title from '../title'
 
 export default function header({ value, payments }) {
   const { updatedAt } = payments[0]
   return (
     <Container>
-      <Title />
       <SubContainer>
         <ContainerValue>
           <small>R$</small>
@@ -37,4 +35,11 @@ export default function header({ value, payments }) {
       </SubContainer>
     </Container>
   )
+}
+
+header.propTypes = {
+  value: PropTypes.number,
+  payments: PropTypes.arrayOf(PropTypes.shape({
+    updatedAt: PropTypes.string,
+  })),
 }

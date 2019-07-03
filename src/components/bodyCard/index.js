@@ -1,6 +1,8 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react'
 import { FaHome } from 'react-icons/fa'
+import PropTypes from 'prop-types'
 import { Container, Content } from './styles'
 
 export default function bodyCard({ customer }) {
@@ -31,4 +33,16 @@ export default function bodyCard({ customer }) {
 
     </Container>
   )
+}
+bodyCard.propTypes = {
+  customer: PropTypes.shape({
+    fullname: PropTypes.string,
+    addresses: PropTypes.arrayOf(PropTypes.shape({
+      street: PropTypes.string,
+      streetNumber: PropTypes.string,
+      district: PropTypes.string,
+      state: PropTypes.string,
+      zipCode: PropTypes.string,
+    })),
+  }),
 }

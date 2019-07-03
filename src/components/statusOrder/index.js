@@ -1,5 +1,6 @@
 import React from 'react'
 import { MdAccessTime } from 'react-icons/md'
+import PropTypes from 'prop-types'
 import { Container, Content, WrapperIcon } from './styles'
 
 const STATUS_ORDER = {
@@ -19,5 +20,9 @@ const statusOrder = ({ status }) => (
     </Content>
   </Container>
 )
+
+statusOrder.propTypes = {
+  status: PropTypes.string.isRequired,
+}
 
 export default statusOrder

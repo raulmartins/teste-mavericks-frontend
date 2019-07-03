@@ -3,7 +3,6 @@
 
 import React, { useEffect, useState } from 'react'
 import moment from 'moment'
-
 import { FormattedNumber } from 'react-intl'
 import {
   Table, WrapperId, WrapperTotal,
@@ -14,24 +13,14 @@ import axios from '../../services/api'
 export default function table() {
   const [orders, setOrders] = useState([])
 
-
   useEffect(() => {
     async function orderList() {
-      const response = await axios.get('/order')
-      // convertDate(response.data)
+      const response = await axios.get('/order?page=1')
       setOrders(response.data)
     }
 
     orderList()
   }, [])
-
-
-  // function convertDate(orders) {
-  //   console.log(orders)
-  //   const newOrders = orders.map(order => {
-  //   })
-  //   console.log(newOrders)
-  // }
 
   return (
     <Table>
