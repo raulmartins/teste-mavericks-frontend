@@ -40,6 +40,7 @@ export const WrapperId = styled.h1`
   font-size: 15px;
   color: rgb(0, 40, 70);
   font-weight:normal;
+  cursor: pointer;
 `
 export const WrapperTotal = styled.small`
   font-size: 15px;

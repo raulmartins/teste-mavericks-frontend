@@ -7,7 +7,7 @@ const globalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
     background: #E5E9EF;
     text-rendering:optimizeLegibility !important;

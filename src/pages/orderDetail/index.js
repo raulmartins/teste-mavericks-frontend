@@ -13,7 +13,9 @@ import CardDetail from '../../components/cardDetail'
 import StatusOrder from '../../components/statusOrder'
 import axios from '../../services/api'
 
-export default function orderDetail() {
+export default function orderDetail(props) {
+  const { id } = props.match.params
+
   const [data, setData] = useState({
     id: '',
     customer: {
@@ -25,11 +27,11 @@ export default function orderDetail() {
 
   useEffect(() => {
     async function orderDetail() {
-      const response = await axios.get('/order/ORD-2MT2IXTNR5NT')
+      const response = await axios.get(`/order/${id}`)
       setData(response.data)
     }
     orderDetail()
-  }, [])
+  }, [id])
 
   return (
     <Container>

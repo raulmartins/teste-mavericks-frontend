@@ -9,7 +9,7 @@ import {
 const orderList = () => (
   <Container>
     <Header>
-      <Title>Pedidos Noroes</Title>
+      <Title>Pedidos</Title>
     </Header>
     <Content>
       <Table />

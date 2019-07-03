@@ -22,6 +22,7 @@ export default function table() {
     orderList()
   }, [])
 
+
   return (
     <Table>
       <thead>
