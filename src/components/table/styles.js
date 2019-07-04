@@ -35,7 +35,7 @@ export const Table = styled.table`
     }
 `
 
-export const WrapperId = styled.h1`
+export const WrapperId = styled.a`
   text-decoration: underline;
   font-size: 15px;
   color: rgb(0, 40, 70);
@@ -50,3 +50,20 @@ export const WrapperTotal = styled.small`
   line-height: 20px;
   text-align: right;
   `
+
+export const IconBall = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height: 25px;
+  width: 25px;
+  background-color: #f7c383;
+  border-radius: 50%;
+  margin: 0 10px;
+  font-size:18px;
+  font-weight:300;
+  color:#002846;
+`
+export const WrapperName = styled.div`
+  display:flex;
+`

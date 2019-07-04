@@ -1,28 +1,14 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react-hooks/rules-of-hooks */
-
-import React, { useEffect, useState } from 'react'
+/* eslint-disable react/prop-types */
+import React from 'react'
 import moment from 'moment'
 import { FormattedNumber } from 'react-intl'
+import { Link } from 'react-router-dom'
 import {
-  Table, WrapperId, WrapperTotal,
+  Table, WrapperId, WrapperTotal, IconBall, WrapperName,
 } from './styles'
 
-import axios from '../../services/api'
 
-export default function table() {
-  const [orders, setOrders] = useState([])
-
-  useEffect(() => {
-    async function orderList() {
-      const response = await axios.get('/order?page=1')
-      setOrders(response.data)
-    }
-
-    orderList()
-  }, [])
-
-
+export default function table({ orders }) {
   return (
     <Table>
       <thead>
@@ -38,7 +24,7 @@ export default function table() {
       <tbody>
         {orders.map(order => (
           <tr key={order.id}>
-            <td><WrapperId>{order.id}</WrapperId></td>
+            <td><WrapperId as={Link} to={`/order/${order.id}`}>{order.id}</WrapperId></td>
             <td>
               R$
               <FormattedNumber
@@ -54,7 +40,12 @@ export default function table() {
               <WrapperTotal>{moment(order.updatedAt).format('DD/MM/YYYY ')} &#8226; </WrapperTotal>
               <WrapperTotal>{moment(order.updatedAt).format('h:mm')}</WrapperTotal>
             </td>
-            <td><WrapperTotal>{order.customer.fullname}</WrapperTotal></td>
+            <td>
+              <WrapperName>
+                <IconBall>{order.customer.fullname.charAt(0)}</IconBall>
+                <WrapperTotal>{order.customer.fullname}</WrapperTotal>
+              </WrapperName>
+            </td>
           </tr>
         ))}
       </tbody>

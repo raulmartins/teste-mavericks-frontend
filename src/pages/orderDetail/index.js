@@ -11,10 +11,24 @@ import BodyCard from '../../components/bodyCard'
 import HeaderCard from '../../components/headerCard'
 import CardDetail from '../../components/cardDetail'
 import StatusOrder from '../../components/statusOrder'
+import BreadCrumb from '../../components/breadCrumb'
 import axios from '../../services/api'
+
 
 export default function orderDetail(props) {
   const { id } = props.match.params
+  const items = [
+    {
+      description: 'Início',
+    },
+    {
+      description: 'Pedidos',
+      path: '/',
+    },
+    {
+      description: id,
+    },
+  ]
 
   const [data, setData] = useState({
     id: '',
@@ -35,6 +49,7 @@ export default function orderDetail(props) {
 
   return (
     <Container>
+      <BreadCrumb items={items} />
       <Title primary>Detalhes do pedido</Title>
       <Header value={data.amount.total} payments={data.payments} />
       <Body>
