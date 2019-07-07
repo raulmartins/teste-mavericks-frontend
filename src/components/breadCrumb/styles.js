@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const Content = styled.ul`
   display:flex;
 
 `
-export const Item = styled.a`
+export const Item = styled(Link)`
   outline:none;
   text-decoration:none;
   margin: 10px 5px;

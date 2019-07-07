@@ -1,11 +1,20 @@
+/* eslint-disable react/no-typos */
 import React from 'react'
-// import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+
 import { Content, Item } from './styles'
 
 const breadCrumb = ({ items }) => (
   <Content>
-    {items.map((item, index) => (<Item as={Link} to={item.path} key={index}>{item.description} /</Item>))}
+    {items.map(item => (<Item to={item.path} key={item.id}>{item.description} /</Item>))}
   </Content>
 )
+
+breadCrumb.proptypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    item: PropTypes.shape({
+      path: PropTypes.string.isRequired,
+    }),
+  })),
+}
 export default breadCrumb

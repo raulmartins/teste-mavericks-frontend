@@ -1,8 +1,9 @@
 /* eslint-disable react/require-default-props */
 import React from 'react'
 import moment from 'moment'
-import { FormattedNumber } from 'react-intl'
+import { FormattedNumber, IntlProvider } from 'react-intl'
 import PropTypes from 'prop-types'
+
 import {
   Container, SubContainer, ContainerValue, ContainerData,
 } from './styles'
@@ -15,11 +16,14 @@ export default function header({ value, payments }) {
         <ContainerValue>
           <small>R$</small>
           <strong>
-            <FormattedNumber
-              value={value}
-              format="BRL"
-              minimumFractionDigits={2}
-            />
+            <IntlProvider locale="en">
+              <FormattedNumber
+                value={value}
+                format="BRL"
+                FormattedNumber="currency"
+                minimumFractionDigits={2}
+              />
+            </IntlProvider>
           </strong>
         </ContainerValue>
         <ContainerData>

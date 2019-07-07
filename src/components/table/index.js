@@ -2,7 +2,6 @@
 import React from 'react'
 import moment from 'moment'
 import { FormattedNumber } from 'react-intl'
-import { Link } from 'react-router-dom'
 import {
   Table, WrapperId, WrapperTotal, IconBall, WrapperName,
 } from './styles'
@@ -24,7 +23,7 @@ export default function table({ orders }) {
       <tbody>
         {orders.map(order => (
           <tr key={order.id}>
-            <td><WrapperId as={Link} to={`/order/${order.id}`}>{order.id}</WrapperId></td>
+            <td><WrapperId to={`/order/${order.id}`}>{order.id}</WrapperId></td>
             <td>
               R$
               <FormattedNumber

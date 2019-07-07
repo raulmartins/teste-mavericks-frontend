@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const Table = styled.table`
     border-collapse:collapse;
@@ -35,7 +36,7 @@ export const Table = styled.table`
     }
 `
 
-export const WrapperId = styled.a`
+export const WrapperId = styled(Link)`
   text-decoration: underline;
   font-size: 15px;
   color: rgb(0, 40, 70);
