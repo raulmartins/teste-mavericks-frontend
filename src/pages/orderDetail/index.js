@@ -57,7 +57,7 @@ export default function orderDetail(props) {
           <HeaderCard primary id={data.id}>
             PEDIDO
           </HeaderCard>
-          <StatusOrder status="WAITING" />
+          <StatusOrder status={data.status} />
         </WrapperStatus>
         <WrapperOrder>
           <HeaderCard primary id={data.id}>
