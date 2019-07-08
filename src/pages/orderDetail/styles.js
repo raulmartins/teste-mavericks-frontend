@@ -6,6 +6,10 @@ export const Container = styled.div`
   width: 633px;
   margin: 0 auto;
   padding: 100px 0;
+
+  @media (max-width: 768px) {
+    width:100vw;
+  }
 `
 
 export const Body = styled.div`
@@ -13,6 +17,13 @@ export const Body = styled.div`
 `
 export const WrapperStatus = styled.div`
   display:flex;
+
+  @media (max-width: 768px) {
+    display:flex;
+    flex-direction:column-reverse;
+    justify-content:center;
+    align-items:center;
+  }
 
 `
 export const WrapperOrder = styled.div`
@@ -23,6 +34,10 @@ export const WrapperOrder = styled.div`
 
 export const Footer = styled.div`
   margin: 20px 0;
-  width: 633px;
+  width: 700px;
+
+  @media (max-width: 768px) {
+    width:100vw;
+  }
 
 `

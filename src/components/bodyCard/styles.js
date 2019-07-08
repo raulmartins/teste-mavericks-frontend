@@ -6,10 +6,13 @@ export const Container = styled.div`
   align-items:flex-start;
   flex-direction:column;
   width:100%;
-  max-width:700px;
+  width:700px;
   height:auto;
   border-top:solid 1px #ddd;
   background:#fff;
+  @media (max-width: 768px) {
+    width:100%;
+  }
 
   div {
     display:flex;

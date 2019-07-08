@@ -5,11 +5,15 @@ export const Container = styled.div`
   justify-content:space-around;
   align-items:center;
   width:100%;
-  max-width:700px;
+  width:700px;
   height:50px;
   background:#fff;
   border-radius:3px;
   padding:5px;
+
+  @media (max-width: 768px) {
+    width:100%;
+  }
 
   button {
     outline:none;
