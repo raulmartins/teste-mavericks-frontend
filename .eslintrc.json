@@ -5,7 +5,7 @@
     "es6": true
   },
   "extends": ["react-app", "airbnb"],
-  "plugins": ["react", "react-hooks"],
+  "plugins": ["react", "jsx-a11y", "import", "react-hooks"],
   "rules": {
     "semi": [2, "never"],
     "react/jsx-filename-extension": [
