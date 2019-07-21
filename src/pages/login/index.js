@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
 import Input from "../../components/input";
 import { Container, Header, Img, Button, Body } from "./styles";
