@@ -1,51 +1,48 @@
 /* eslint-disable no-shadow */
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 
-import {
-  Container, Body, Footer, WrapperStatus, WrapperOrder,
-} from './styles'
-import Header from '../../components/header'
-import Title from '../../components/title'
-import BodyCard from '../../components/bodyCard'
-import HeaderCard from '../../components/headerCard'
-import CardDetail from '../../components/cardDetail'
-import StatusOrder from '../../components/statusOrder'
-import BreadCrumb from '../../components/breadCrumb'
-import axios from '../../services/api'
-
+import { Container, Body, Footer, WrapperStatus, WrapperOrder } from "./styles";
+import Header from "../../components/header";
+import Title from "../../components/title";
+import BodyCard from "../../components/bodyCard";
+import HeaderCard from "../../components/headerCard";
+import CardDetail from "../../components/cardDetail";
+import StatusOrder from "../../components/statusOrder";
+import BreadCrumb from "../../components/breadCrumb";
+import axios from "../../services/api";
 
 export default function orderDetail(props) {
-  const { id } = props.match.params
+  const { id } = props.match.params;
   const items = [
     {
-      description: 'Início',
+      description: "Início"
     },
     {
-      description: 'Pedidos',
-      path: '/',
+      description: "Pedidos",
+      path: "/order"
     },
     {
-      description: id,
-    },
-  ]
+      description: id
+    }
+  ];
 
   const [data, setData] = useState({
-    id: '',
+    id: "",
     customer: {
-      addresses: [{}],
+      addresses: [{}]
     },
     amount: {},
-    payments: [{}],
-  })
+    payments: [{}]
+  });
 
   useEffect(() => {
     async function orderDetail() {
-      const response = await axios.get(`/order/${id}`)
-      setData(response.data)
+      const response = await axios.get(`/order/${id}`);
+      setData(response.data);
     }
-    orderDetail()
-  }, [id])
+    orderDetail();
+  }, [id]);
 
   return (
     <Container>
@@ -64,14 +61,12 @@ export default function orderDetail(props) {
             WIRECARD ID
           </HeaderCard>
         </WrapperOrder>
-        <HeaderCard>
-          DADOS DO COMPRADOR
-        </HeaderCard>
+        <HeaderCard>DADOS DO COMPRADOR</HeaderCard>
         <BodyCard customer={data.customer} />
       </Body>
       <Footer>
         <CardDetail amount={data.amount} />
       </Footer>
     </Container>
-  )
+  );
 }

@@ -5,21 +5,19 @@ import { Container, Header, Img, Button, Body } from "./styles";
 import logoMoip from "../../assets/image/logoMoip.png";
 import axios from "../../services/api";
 
-// const mock = {
-//   username: "moip-test-developer@moip.com.br",
-//   password: "testemoip123"
-// };
-
-export default function login() {
+export default function login({ history }) {
   const [auth, setAuth] = useState({
     username: "",
     password: ""
   });
 
   const handleAuth = async () => {
-    console.log("auth state", auth);
     const response = await axios.post("/session", auth);
-    console.log(response.data);
+    const { accessToken } = response.data;
+    if (response.status === 200) {
+      localStorage.setItem("accessToken", accessToken);
+      history.push("/order");
+    }
   };
 
   const handleChangeUsername = async e => {
