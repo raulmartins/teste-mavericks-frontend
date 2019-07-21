@@ -8,10 +8,10 @@ import PageNotFound from "./pages/pageNotFound";
 const Routes = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={OrderList} />
+      <Route exact path="/" component={Login} />
+      <Route path="/order" component={OrderList} />
       <Route path="/order/:id" component={OrderDetail} />
-      <Route path="/login" component={Login} />
-      <Route path="*" component={PageNotFound} />
+      <Route path="*" component={Login} />
     </Switch>
   </BrowserRouter>
 );
